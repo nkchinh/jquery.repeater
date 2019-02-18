@@ -29,6 +29,15 @@ module.exports = function (grunt) {
                 separator: '\n',
                 banner: bannerTemplate
             },
+            main: {
+                src: [
+                    'src/intro.js',
+                    'src/lib.js',
+                    'src/repeater.js',
+                    'src/outro.js'
+                ],
+                dest: '<%= pkg.name %>.js'
+            },
             dist: {
                 src: [
                     'src/intro.js',
@@ -37,14 +46,17 @@ module.exports = function (grunt) {
                     'src/repeater.js',
                     'src/outro.js'
                 ],
-                dest: '<%= pkg.name %>.js'
+                dest: '<%= pkg.name %>.full.js'
             }
         },
 
         uglify: {
             options: { banner: bannerTemplate },
+            main: {
+                files: { '<%= pkg.name %>.min.js': ['<%= concat.main.dest %>'] }
+            },
             dist: {
-                files: { '<%= pkg.name %>.min.js': ['<%= concat.dist.dest %>'] }
+                files: { '<%= pkg.name %>.full.min.js': ['<%= concat.dist.dest %>'] }
             }
         },
 
@@ -71,8 +83,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-qunit');
+    //grunt.loadNpmTasks('grunt-contrib-qunit');
 
-    grunt.registerTask('default', ['preprocess', 'concat', 'uglify', 'qunit']);
+    grunt.registerTask('default', ['preprocess', 'concat', 'uglify'/*, 'qunit'*/]);
     grunt.registerTask('test', ['preprocess', 'concat', 'uglify', 'qunit']);
 };
