@@ -32,5 +32,8 @@
     "grunt-contrib-uglify": "^2.0.0",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-preprocess": "^5.1.0"
+  },
+  "dependencies": {
+    "@tdcore/jquery.input": "file:../jquery.input"
   }
 }
