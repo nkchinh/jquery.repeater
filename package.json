@@ -26,6 +26,19 @@
   },
   "homepage": "https://github.com/DubFriend/jquery.repeater",
   "devDependencies": {
+    "@babel/core": "^7.3.3",
+    "@babel/plugin-external-helpers": "^7.2.0",
+    "@babel/preset-env": "^7.3.1",
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
+    "rollup": "^1.1.2",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-uglify": "^6.0.2",
     "grunt": "^1.0.1",
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-qunit": "^1.2.0",
@@ -34,6 +47,6 @@
     "grunt-preprocess": "^5.1.0"
   },
   "dependencies": {
-    "@tdcore/jquery.input": "file:../jquery.input"
+    "jquery": "^3.3.1"
   }
 }
