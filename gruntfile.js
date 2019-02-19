@@ -40,9 +40,9 @@ module.exports = function (grunt) {
             },
             dist: {
                 src: [
+                    'src/jquery.input.js',
                     'src/intro.js',
                     'src/lib.js',
-                    'src/jquery.input.js',
                     'src/repeater.js',
                     'src/outro.js'
                 ],
